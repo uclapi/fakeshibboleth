@@ -14,7 +14,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
-from core.views import shibboleth, auto_shibboleth
+
+from core.views import auto_shibboleth, shibboleth
 
 urlpatterns = [
     url(r'^Login$', shibboleth),

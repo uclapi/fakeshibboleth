@@ -1,8 +1,9 @@
+import os
+
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
-from fakeshibboleth.helpers import redirect_params
 
-import os
+from fakeshibboleth.helpers import redirect_params
 
 
 def shibboleth(request):
@@ -13,11 +14,12 @@ def shibboleth(request):
     }
     return render(request, "core/shibboleth.html", context)
 
+
 @csrf_exempt
 def auto_shibboleth(request):
     callback = request.GET["target"]
-    
-    params={
+
+    params = {
         'eppn': os.environ.get("AUTO_EPPN"),
         'uclIntranetGroups': os.environ.get("AUTO_UCLINTRANETGROUPS"),
         'cn': os.environ.get("AUTO_CN"),
