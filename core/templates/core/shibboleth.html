@@ -6,6 +6,7 @@
   </head>
   <body>
     <form action="{{callback}}" method="post">
+      <h3>UCL API Required Fields</h3>
       <input type="hidden" name="convert-post-headers" value="1">
       <label for="eppn">eppn: </label>
       <input id="eppn" type="text" name="HTTP_EPPN">
@@ -27,6 +28,19 @@
       <br />
       <label for="employee_id">employee_id: </label>
       <input id="employee_id" type="text" name="HTTP_EMPLOYEEID">
+      <br />
+      <h3>Other Attributes Supplied by UCL</h3>
+      <label for="affiliation">affiliation: </label>
+      <input id="affiliation" type="text" name="HTTP_AFFILIATION">
+      <br />
+      <label for="mail">mail: </label>
+      <input id="mail" type="text" name="HTTP_MAIL">
+      <br />
+      <label for="sn">sn: </label>
+      <input id="sn" type="text" name="HTTP_SN">
+      <br />
+      <label for="unscoped-affiliation">unscoped-affiliation: </label>
+      <input id="unscoped-affiliation" type="text" name="HTTP_UNSCOPED_AFFILIATION">
       <br />
       <input type="submit" value="Login (Send shibboleth data)">
   </form>
