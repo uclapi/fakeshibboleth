@@ -7,5 +7,8 @@ def redirect_params(url, params=None):
     response = redirect(url)
     if params:
         query = urlencode(params)
-        response['Location'] += '?' + query
+        if '?' in response['Location']:
+            response['Location'] += '&' + query
+        else:
+            response['Location'] += '?' + query
     return response
